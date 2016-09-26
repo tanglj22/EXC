@@ -1,0 +1,94 @@
+@charset "UTF-8";
+*{
+  font-family: 微软雅黑;
+  margin: 0;
+  padding: 0;
+}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font-family: 微软雅黑; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+.clearfix:after{ content:'';clear: both;display: table; }
+.clearfix{*zoom:1}
+
+/****************************************************************/
+@mixin toolbar-item($pos1,$pos2){
+  background-position: 0 $pos1;
+  &:hover{
+    background-position: 0 $pos2;
+  }
+}
+
+@import "mixin";
+/**************************************************/
+$toolbar-width: 52px;
+$toolbar-layer-width: 172px;
+
+
+
+/**************************************************/
+.toolbar{
+  width: $toolbar-width;
+  position: fixed;
+  right: 10px;
+  top: 50%;
+}
+.toolbar-item{
+  display: block;
+  width: $toolbar-width;
+  height: $toolbar-width;
+  background: url(../image/toolbar.png) no-repeat;
+  margin-top: 1px;
+  @include transition(background-position 1s);
+
+  &:hover{
+    .toolbar-layer{
+      @include opacity(1);
+      @include scale(1);
+      //@include transform-origin(right bottom);
+    }
+  }
+}
+.toolbar-item-weichat{
+  @include toolbar-item(-798px,-860px);
+  .toolbar-layer{
+    height: 212px;
+    margin-top: -212px + $toolbar-width + 10px;
+    background-position: 0 0;
+  }
+}
+.toolbar-item-app{
+  @include toolbar-item(-550px,-612px);
+  .toolbar-layer{
+    height: 194px;
+    margin-top: -194px + $toolbar-width + 10px;
+    background-position: 0 -222px;
+  }
+}
+.toolbar-item-feedback{
+  @include toolbar-item(-426px,-488px);
+}
+.toolbar-item-top{
+  @include toolbar-item(-674px,-736px);
+}
+.toolbar-layer{
+  width: $toolbar-layer-width;
+  margin-left: -$toolbar-layer-width;
+  position: absolute;
+  background: url(../image/toolbar.png) no-repeat;
+  @include opacity(0);
+  @include transform-origin(right bottom);
+  @include scale(0.01);
+  @include transition(all 1s);
+}

@@ -1,0 +1,59 @@
+@charset "UTF-8";
+body {
+    font-size: 16px;
+    line-height: 30px;
+}
+* {
+    margin: 0;
+    padding: 0;            /*  去掉所有标签的marign和padding的值  */
+    font-family: '微软雅黑';
+}
+ul {
+    list-style: none;           /*  去掉ul标签默认的点样式  */
+}
+a img {
+    border: none;        /*  超链接下，图片的边框  */
+}
+a {
+    color: #333;
+    text-decoration: none;     /* 超链接样式 */
+}
+a:hover,li:hover{
+    color: #D64B43;
+}
+
+.Box{
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+    margin: 50px auto;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    background: seashell;
+    box-shadow: 3px 3px 2px #ccc;
+}
+.Box .header{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 1px 1px 5px #aaa;
+    background: #F7645C;
+}
+.Box #con{
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+    display: block;
+}
+
+.Box #con1 li, .Box #con2 li{
+    height: 30px;
+    margin-left: 30px;
+}
+.Box #con1 span, .Box #con2 span{
+    float: right;
+    margin-right: 30px;
+}

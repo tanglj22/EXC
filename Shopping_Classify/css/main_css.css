@@ -1,0 +1,149 @@
+.main-left {
+  float: left;
+}
+.main-left .topmenu {
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  width: 220px;
+  border-left: 1px solid #C81623;
+  border-bottom: 1px solid #C81623;
+  border-top: 1px solid #C81623;
+}
+.main-left .topmenu div {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  background: #B1191A;
+}
+.main-left .topmenu li a {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  background: #C81623;
+  font-size: 14px;
+  display: block;
+  color: #fff;
+}
+.main-left .topmenu li a:before {
+  content: '>';
+  float: right;
+  margin-right: 10px;
+}
+.main-left .topmenu li a:hover {
+  background: #F7F7F7;
+  color: #C81623;
+}
+
+.main-right {
+  margin-left: 221px;
+  width: 999px;
+  position: relative;
+}
+.main-right .nav-bar {
+  height: 39px;
+  width: 1000px;
+  border-bottom: 2px solid #B1191A;
+}
+.main-right .nav-bar ul li {
+  float: left;
+  line-height: 40px;
+  width: 80px;
+  text-align: center;
+}
+.main-right .nav-bar ul li a {
+  color: #000;
+}
+.main-right .nav-bar ul li a:hover {
+  color: #C81623;
+}
+.main-right .sub-level {
+  display: block;
+  position: absolute;
+  z-index: 8;
+  border-left: 1px solid #C81623;
+  border-right: 1px solid #C81623;
+  border-bottom: 1px solid #C81623;
+  left: -1px;
+  width: 100%;
+  height: 450px;
+  background: #f7f7f7;
+}
+.main-right .sub-level .sub-left {
+  width: 700px;
+}
+.main-right .sub-level .sub-left ul {
+  margin: 20px;
+}
+.main-right .sub-level .sub-left ul li {
+  float: left;
+}
+.main-right .sub-level .sub-left ul li a {
+  height: 25px;
+  line-height: 25px;
+  display: block;
+  color: #fff;
+  padding: 0 10px;
+  margin-right: 15px;
+  font-size: 10px;
+  background: #717171;
+}
+.main-right .sub-level .sub-left ul li a span {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: rgba(0, 0, 0, 0.2);
+  float: right;
+  margin-right: -10px;
+  text-align: center;
+}
+.main-right .sub-level .sub-left ul li a:hover {
+  background: #C81623;
+}
+.main-right .sub-level .sub-left dl {
+  float: left;
+  width: 700px;
+  overflow: hidden;
+  margin-top: 5px;
+  padding-bottom: 5px;
+}
+.main-right .sub-level .sub-left dl dt {
+  float: left;
+  margin: 0 10px;
+  display: block;
+  width: 70px;
+  height: 22px;
+  line-height: 22px;
+  text-align: right;
+  font-size: 10px;
+}
+.main-right .sub-level .sub-left dl dt a {
+  font-weight: bolder;
+  color: #666666;
+}
+.main-right .sub-level .sub-left dl dt a:after {
+  content: '>';
+  margin-left: 5px;
+}
+.main-right .sub-level .sub-left dl dt a:hover {
+  color: #C81623;
+}
+.main-right .sub-level .sub-left dl dd {
+  margin-left: 90px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+.main-right .sub-level .sub-left dl dd a {
+  float: left;
+  display: block;
+  color: #666666;
+  font-size: 12px;
+  border-left: 1px solid #ddd;
+  padding-left: 8px;
+  margin: 3px;
+}
+.main-right .sub-level .sub-left dl dd a:hover {
+  color: #C81623;
+}
+
+/*# sourceMappingURL=main_css.css.map */

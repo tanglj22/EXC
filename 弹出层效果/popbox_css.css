@@ -1,0 +1,111 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    font-family: '微软雅黑';
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    line-height: 60px;
+    background: #C03A4B;
+}
+header button{
+    width: 100px;
+    height: 100%;
+    float: right;
+    background: #fff;
+    color: #C03A4B;
+    border: 1px solid #fff;
+}
+
+#mask{
+    background: rgba(0,0,0,0.55);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+#loginBox{
+    width: 500px;
+    height: 350px;
+    position: fixed;
+    background: #EFF0F3;
+    z-index: 101;
+    visibility: hidden;
+}
+#loginHeader{
+    width: 100%;
+    height: 50px;
+    padding-left: 15px;
+    line-height: 50px;
+    font-size: 20px;
+    background: #C03A4B;
+    color: #fff;
+}
+#close{
+    float: right;
+    margin: 15px;
+}
+
+.userIm{
+    width: 250px;
+    margin: 20px;
+    position: relative;
+}
+
+.userIm input{
+    width: 100%;
+    height: 50px;
+    margin: 10px auto;
+    display: table;
+}
+.userIm input[type~=text]{
+    padding-left: 10px;
+}
+.userIm input[type~=checkbox]{
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+.userIm label{
+    position: absolute;
+    top: 120px;
+    left: 30px;
+}
+.userIm input[type~=button]{
+    width: 120px;
+    height: 40px;
+    float: left;
+    margin: 20px 2px;
+    border: 1px solid mediumseagreen;
+    background: mediumseagreen;
+    color: #fff;
+}
+
+.other{
+    float: right;
+    margin: -170px 15px;
+    width: 180px;
+    text-align: center;
+    font-size: 16px;
+}
+.other button{
+    width: 100%;
+    height: 40px;
+    margin: 10px auto;
+    color: #fff;
+    display: table;
+}
+.other button:first-of-type{
+    border: 1px solid #65ADDF;
+    background: #65ADDF;
+}
+.other button:last-of-type{
+    border: 1px solid #C03A4B;
+    background: #C03A4B;
+}

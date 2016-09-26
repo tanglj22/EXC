@@ -1,0 +1,161 @@
+$color1: #C81623;
+$color2: #B1191A;
+$color3: #f7f7f7;
+$color4: #666666;
+
+.main-left{
+  float: left;
+  .topmenu{
+	position: relative;
+	z-index: 10;
+	color: #fff;
+	width: 220px;
+	border-left: 1px solid $color1;
+	border-bottom: 1px solid $color1;
+	border-top: 1px solid $color1;
+	div{
+	  height: 40px;
+	  line-height: 40px;
+	  padding-left: 10px;
+	  background: #B1191A;
+	}
+	li{
+	  a{
+		height: 30px;
+		line-height: 30px;
+		padding-left: 10px;
+		background: $color1;
+		font-size: 14px;
+		display: block;
+		color: #fff;
+		&:before{
+		  content: '>';
+		  float: right;
+		  margin-right: 10px;
+		}
+		&:hover{
+		  background: #F7F7F7;
+		  color: $color1;
+		}
+	  }
+
+
+
+	}
+  }
+}
+
+.main-right{
+  margin-left: 220px + 1px;
+  width: 999px;
+  position: relative;
+  .nav-bar{
+	height: 39px;
+	width: 1000px;
+	border-bottom: 2px solid $color2;
+	ul{
+	  li{
+		float: left;
+		line-height: 40px;
+		width: 80px;
+		text-align: center;
+		a{
+			color: #000;
+		  &:hover{
+			color: $color1;
+		  }
+		}
+	  }
+	}
+  }
+  .sub-level{
+	display: block;
+	position: absolute;
+	z-index: 8;
+	border-left: 1px solid $color1;
+	border-right: 1px solid $color1;
+	border-bottom: 1px solid $color1;
+	left: -1px;
+	width: 100%;
+	height: 450px;
+	background: #f7f7f7;
+	.sub-left{
+	  width: 700px;
+	  ul{
+		margin: 20px;
+		li{
+		  float: left;
+		  a{
+			height: 25px;
+			line-height: 25px;
+			display: block;
+			color: #fff;
+			padding: 0 10px;
+			margin-right: 15px;
+			font-size: 10px;
+			background: #717171;
+			span{
+			  display: block;
+			  width: 25px;
+			  height: 25px;
+			  background: rgba(0,0,0,0.2);
+			  float: right;
+			  margin-right: -10px;
+			  text-align: center;
+			}
+			&:hover{
+			  background: #C81623;
+			}
+		  }
+		}
+	  }
+	  dl{
+		float: left;
+		width: 700px;
+		overflow: hidden;
+		margin-top: 5px;
+		padding-bottom: 5px;
+		//border-bottom: 1px solid #ccc;
+		dt{
+		  float: left;
+		  margin: 0 10px;
+		  display: block;
+		  width: 70px;
+		  height: 22px;
+		  line-height: 22px;
+		  text-align: right;
+		  font-size: 10px;
+		  a{
+			font-weight: bolder;
+			color:$color4;
+			&:after{
+			  content: '>';
+			  margin-left: 5px;
+			}
+			&:hover{
+			  color: $color1;
+			}
+		  }
+		}
+		dd{
+		  margin-left: 90px;
+		  padding-bottom: 5px;
+		  border-bottom: 1px solid #ddd;
+			a{
+			  float: left;
+			  display: block;
+			  color:$color4;
+			  font-size: 12px;
+			  border-left: 1px solid #ddd;
+			  padding-left: 8px;
+			  margin: 3px;
+			  &:hover{
+				color: $color1;
+			  }
+			}
+		  }
+		}
+	  }
+	}
+}
+
