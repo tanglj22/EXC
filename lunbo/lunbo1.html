@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<link href="public_reset.css" type="text/css" rel="stylesheet">-->
+    <style>
+        *{
+            margin: 0 ;
+            padding: 0;
+            overflow: visible;
+        }
+        li{
+            list-style: none;
+        }
+        .outer{
+            width: 400px;
+            height: 300px;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            border:1px solid black;
+            overflow: hidden;
+        }
+        #container{
+            width: 400px;
+            height: 300px;
+        }
+        img{
+            width: 400px;
+            height: 300px;
+            float: left;
+        }
+        #container ul{
+            width: 10000px;
+            position: absolute;
+            left: -400px;
+        }
+        #container ul li{
+            float:left;
+            /*position: absolute;*/
+        }
+        #circles ul{
+            position: absolute;
+            bottom: 0;
+            left: 100px;
+        }
+        .cir{
+            float: left;
+            width: 15px;
+            height: 15px;
+            margin: 10px;
+            border: 1px solid #666;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.6);
+        }
+        .sim{
+            width: 30px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.7);
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            top: 110px;
+        }
+        .sim:hover{
+            background-color: rgba(0,0,0,0.4);
+        }
+        #on{
+            background-color: #222;
+        }
+        #left{
+            left: 0;
+            display:none;
+        }
+        #right{
+            right: 0;
+            display:none;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var outer = document.getElementsByClassName("outer")[0];
+            var pre = document.getElementById("left");
+            var next = document.getElementById("right");
+            var circles = document.getElementsByClassName('cir');
+            var cir = document.getElementById("circles");
+            var conUl = document.getElementById('con-ul');
+            var index = 1;
+            var timer;
+
+            // 设置图片移动的效果
+            function animate(offset){
+                var le = conUl.offsetLeft + offset;
+                var time = 300;
+                var interval = 10;
+                var speed = offset/(time/interval);
+                function go(){
+                    if((speed<0&&conUl.offsetLeft>le)||(speed>0&&conUl.offsetLeft<le)){
+                        conUl.style.left = conUl.offsetLeft+speed + 'px';
+                        setTimeout(go,interval);
+                    }else{
+                        conUl.style.left = le + 'px';
+                        if(le>-400){
+                            conUl.style.left = -2000 +'px';
+                        }
+                        if(le<-2000){
+                            conUl.style.left = -400+'px';
+                        }
+                    }
+                }
+                go()
+            }
+            // 设置开始自行播放
+            function play(){
+                timer = setInterval(function(){
+                    next.onclick();
+                },3000)
+            }
+            // 设置停止自行播放
+            function stop(){
+                clearInterval(timer);
+            }
+
+            // 为圆形按钮设置效果
+            for(var i=0;i<circles.length;i++){
+                // 闭包闭包！注意咯
+                circles[i].a = i;
+                circles[i].onclick = function(){
+                    circle(this.a+1);
+                    choose(this.a);
+                };
+            }
+            function choose(index){
+                console.log(index)
+                conUl.style.left = index*(-400)-400 + 'px';
+            }
+            function circle(index){
+                for(var i=0;i<circles.length;i++){
+                    if(circles[i].id == 'on'){
+                        circles[i].id = '';
+                    }
+                }
+                circles[index-1].id='on'
+            }
+
+            // 设置左右点击事件
+            pre.onclick = function(){
+                if(index>1){
+                    index --;
+                }else{
+                    index = 5;
+                }
+                circle(index);
+                animate(400)
+            };
+            next.onclick = function(){
+                if(index<5){
+                    index ++;
+                }else{
+                    index = 1;
+                }
+                circle(index);
+                animate(-400)
+            };
+            setTimeout(function(){
+                clearInterval(timer);
+                play();
+            },20)
+            // 鼠标移上图片，停止自动播放
+            outer.onmouseover = function(){
+                stop();
+                pre.style.display = 'block';
+                next.style.display = 'block';
+            };
+            // 鼠标移开 继续自动播放
+            outer.onmouseout = function(){
+                pre.style.display = 'none';
+                next.style.display = 'none';
+                play();
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="outer">
+    <div id="container" >
+        <ul id="con-ul">
+            <li index="5"><a href="#"><img src="image/555.jpeg"></a></li>
+            <li index="1" id="1"><a href="#"><img src="image/111.jpeg"></a></li>
+            <li index="2" id="2"><a href="#"><img src="image/222.jpeg"></a></li>
+            <li index="3" id="3"><a href="#"><img src="image/333.jpeg"></a></li>
+            <li index="4" id="4"><a href="#"><img src="image/444.jpeg"></a></li>
+            <li index="5" id="5"><a href="#"><img src="image/555.jpeg"></a></li>
+            <li index="1" ><a href="#"><img src="image/111.jpeg"></a></li>
+        </ul>
+    </div>
+    <div id="left" class="sim"><a></a></div>
+    <div id="right" class="sim"><a></a></div>
+    <div id="circles">
+        <ul>
+            <li class="cir" id="on"></li>
+            <li class="cir"></li>
+            <li class="cir"></li>
+            <li class="cir"></li>
+            <li class="cir"></li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>
